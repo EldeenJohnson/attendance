@@ -35,7 +35,7 @@ use LDAP\Result;
         public function editAttendee($id, $fname, $lname, $dob, $email, $contact, $specialty)
             {
                 try{
-                $sql = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dob`=:dob,`emailaddress`=:email,`contactnum`=:contact,`specialty_id`=:specialty WHERE :id";   
+                $sql = "UPDATE `attendee` SET `firstname`=:fname,`lastname`=:lname,`dob`=:dob,`emailaddress`=:email,`contactnum`=:contact,`specialty_id`=:specialty WHERE attendee_id=:id";   
                 $stmt = $this->db->prepare($sql);
 
                 $stmt->bindparam(':id',$id);    
