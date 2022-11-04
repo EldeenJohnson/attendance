@@ -2,6 +2,7 @@
     $title = 'Success';
     require_once 'includes/header.php';
     require_once 'db/conn.php';
+    
 
     if(isset($_POST['submit'])){
         //extract values from the $_POST array
@@ -13,7 +14,7 @@
         $specialty = $_POST['specialty'];
 
         //call function to insert and track if success / not
-        $isSuccess = $crud->insert($fname, $lname, $dob, $email, $contact, $specialty);
+        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
 
         if($isSuccess){
             echo '<h1 class="text-center text-success"> You Have Been Registered!</h1>';
