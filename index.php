@@ -19,7 +19,7 @@
         </div>
         <div class="mb-3">
             <label for="dob" class="form-label">Date Of Birth</label>
-            <input required type="text" class="form-control" id="dob" name="dob">
+            <input type="text" class="form-control" id="dob" name="dob">
         </div>
         <div class="mb-3">
             <label for="specialty" class="form-label">Specialty</label>
