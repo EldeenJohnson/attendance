@@ -40,4 +40,4 @@
 <br>
 <br>
 <br>
-<?php require_once 'includes/Footer.php'; ?>
+<?php require_once 'includes/footer.php'; ?>
