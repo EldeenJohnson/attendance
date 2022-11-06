@@ -28,7 +28,8 @@
                 <td>
                     <a href = "view.php?id=<?php echo $r['attendee_id'] ?>" class = "btn btn-primary"> view </a>
                     <a href = "edit.php?id=<?php echo $r['attendee_id'] ?>" class = "btn btn-warning"> edit </a>
-                    <a href = "delete.php?id=<?php echo $r['attendee_id'] ?>" class = "btn btn-danger"> delete </a>
+                    <a onclick="return confirm('Please Confirm Deletion, A deleted record cannot be recovered! ');"
+                    href = "delete.php?id=<?php echo $r['attendee_id'] ?>" class = "btn btn-danger"> delete </a>
                 </td>
             </tr>
         <?php } ?>

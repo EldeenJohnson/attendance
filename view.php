@@ -6,6 +6,7 @@
 
     //gets detail of a single attendee by id
     if(!isset($_GET['id'])){
+        include 'includes/errormessage.php';
         echo "<h1 class='text-danger'>Please chech details and try again</h1>";        
     }else{
         $id = $_GET['id'];
@@ -38,10 +39,15 @@
         <li class="list-group-item">Email: <?php echo $result['emailaddress']; ?></li>
     </ul>
     <div class="card-body text-center">
-    <a class="btn btn-outline-info" href="index.php" role="button">Create a new entry</a>
+        <a href = "viewrecords.php" class = "btn btn-info">Back to List</a>
+        <a href = "edit.php?id=<?php echo $result['attendee_id'] ?>" class = "btn btn-warning"> Edit </a>
+        <a onclick="return confirm('Please Confirm Deletion, A deleted record cannot be recovered! ');"
+        href = "delete.php?id=<?php echo $result['attendee_id'] ?>" class = "btn btn-danger"> Delete </a>
+        <a class="btn btn-success" href="index.php" role="button">New Entry</a>
     </div>
 </div>
-        <?php } ?>
+      
+<?php } ?>
 
 <br>
 <br>
