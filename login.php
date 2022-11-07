@@ -39,7 +39,7 @@
 <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 
     <div class="mb-3">
-      <label for="email" class="form-label">Username *</label>
+      <label for="username" class="form-label">Username *</label>
       <input type="username" class="form-control" id="username" name="username" value="<?php if($_SERVER['REQUEST_METHOD'] === 'POST') echo $_POST['username']; ?>">
     </div>
 
