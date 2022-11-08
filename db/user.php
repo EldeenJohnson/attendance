@@ -7,7 +7,7 @@ class user {
     $this->db = $conn;
   }
 
-  public function insertUser($email, $username, $password) {
+  public function insertUser($username, $password) {
     try {
       // check if user already exists
       $result = $this->getUserByUsername($username);
@@ -16,9 +16,9 @@ class user {
       } else {
         // hash the password 
         $new_password = md5($password.$username);
-        $sql = "INSERT INTO users (email, username, password) VALUES (:email, :username, :password)";
+        $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
         $stmt = $this->db->prepare($sql);
-        $stmt->bindParam(':email', $email);
+        
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':password', $new_password);
         $stmt->execute();
@@ -30,12 +30,12 @@ class user {
     }
   }
 
-  public function getUser($email, $password) {
+  public function getUser($username, $password) {
     // var_dump($email, $password); exit;
     try {
-      $sql = "SELECT * FROM users WHERE email = :email AND password = :password";
-      $stmt = $this->db->prepare($sql);
-      $stmt->bindParam(':email', $email);
+      $sql = "SELECT * FROM users where username = :username AND password =:password";
+      $stmt = $this->db->prepare($sql); 
+      $stmt->bindparam(':username', $username);     
       $stmt->bindParam(':password', $password);
       $stmt->execute();
       $result = $stmt->fetch();

@@ -19,13 +19,7 @@
     if(!$result) {
       echo '<br><div class="alert alert-danger">username or password is incorrect. Please try again. </div>';
     // if the user exists, define session variables and redirect
-    } else {
-      // var_dump($email); 
-      // var_dump($password); 
-      // var_dump($result['username']); 
-      // exit;
-      // var_dump($email, $password, $result['username']); exit;
-      $_SESSION['email'] = $email;
+    } else {     
       $_SESSION['username'] = $result['username'];
       $_SESSION['userid'] = $result['id'];
       header('Location: viewrecords.php');

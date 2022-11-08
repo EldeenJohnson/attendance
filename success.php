@@ -20,15 +20,14 @@
         $destination = "$target_dir$contact.$ext";
         move_uploaded_file($orig_file,$destination);
 
-        exit();
 
         //call function to insert and track if success / not
-        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty);
+        $isSuccess = $crud->insertAttendees($fname, $lname, $dob, $email, $contact, $specialty, $destination);
         $specialtyName = $crud->getSpecialtyById($specialty);
 
         if($isSuccess){
-            //echo '<h1 class="text-center text-success"> You Have Been Registered!</h1>';
-            SendEmail::SendMail($email, 'Welcome to IT Conference', 'You have successfully registered for the IT Conference');
+            echo '<h1 class="text-center text-success"> You Have Been Registered!</h1>';
+          //  SendEmail::SendMail($email, 'Welcome to IT Conference', 'You have successfully registered for the IT Conference');
             include 'includes/successmessage.php';
         }
         else{
@@ -45,6 +44,9 @@
     <img src="images/celebrate-success.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">
+ 
+               <img src="<?php echo $destination;?>" style="width: 23rem; "/>
+
             <?php 
                 echo $_POST['firstname'] . ' ' . $_POST['lastname'];
             ?>
