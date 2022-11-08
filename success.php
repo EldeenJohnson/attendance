@@ -45,7 +45,7 @@
     <div class="card-body">
         <h5 class="card-title">
  
-               <img src="<?php echo $destination;?>" style="width: 23rem; "/>
+               <img src="<?php echo $destination;?>" class="rounded mx-auto d-block img-fluid" style="width: 23rem; "/>
 
             <?php 
                 echo $_POST['firstname'] . ' ' . $_POST['lastname'];

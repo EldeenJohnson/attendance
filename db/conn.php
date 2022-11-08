@@ -1,17 +1,17 @@
 <?php
     //Developement connection
-    $host = '127.0.0.1';
+   /* $host = '127.0.0.1';
     $db = 'attendance';
     $user ='root';
     $pass = '';
-    $charset = 'utf8mb4';
+    $charset = 'utf8mb4';*/
 
     //remote database connection
-  /*  $host = 'remotemysql.com';
+    $host = 'remotemysql.com';
     $db = '7cW7haEUA8';
     $user ='7cW7haEUA8';
     $pass = 'ymTvk8sFhT';
-    $charset = 'utf8mb4';*/
+    $charset = 'utf8mb4';
     
     $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 

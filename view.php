@@ -21,7 +21,7 @@
     <div class="card-body">
         <h5 class="card-title">
 
-        <img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'];?>" style="width: 23rem; rounded"/>
+        <img src="<?php echo empty($result['avatar_path']) ? "uploads/blank.png" : $result['avatar_path'];?>" class="rounded mx-auto d-block img-fluid" style="width: 23rem; rounded"/>
 
             <?php 
                 echo $result['firstname'] . ' ' . $result['lastname'];
