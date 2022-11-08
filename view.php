@@ -17,7 +17,6 @@
 <br>
 <br>
 <div class="card  border-success mb-3" style="width: 25rem;">
-    <img src="images/cat.jpg" class="card-img-top" alt="...">
     <div class="card-body">
         <h5 class="card-title">
 
